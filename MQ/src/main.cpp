@@ -45,20 +45,20 @@ void StorePoints(std::vector<std::pair<float, float>>& p) {
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR, int)
 {
     // Create a window with class name "MyWindowClass" and title "My Window"
-    Window window(hInstance, L"MyWindowClass", L"My Window", 600, 600);
-    Graphics gfx(window.GetHwnd(), 600, 600);
+    Window window(hInstance, L"MyWindowClass", L"My Window", 800, 600);
+    Graphics gfx(window.GetHwnd(), 800, 600);
 	Graph2D graph(gfx);
     ImGuiManager imgui(window.GetHwnd(), gfx);
 
-    std::vector<std::pair<float, float>> points;
-    StorePoints(points);
+    //std::vector<std::pair<float, float>> points;
+    //StorePoints(points);
 
     while (window.ProcessMessages()) {
         gfx.Clear(0.1f, 0.2f, 0.3f, 1.0f);
-        graph.DrawPixels(points, 1.0f, 1.0f, 1.0f);
+        //graph.DrawPixels(points, 1.0f, 1.0f, 1.0f);
         imgui.BeginFrame();
-        gfx.Present();
         imgui.EndFrame();
+        gfx.Present();
     }
 
     return 0;
