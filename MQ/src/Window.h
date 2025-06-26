@@ -6,7 +6,7 @@
 
 class Window{
 public:
-    Window(HINSTANCE hInstance, const std::wstring& className, const std::wstring& windowTitle, int width = 800, int height = 600);
+    Window(HINSTANCE hInstance, const std::wstring& windowTitle, int width = 800, int height = 600);
     ~Window();
 
     HWND GetHwnd() const { return m_hwnd; }
@@ -19,7 +19,7 @@ private:
 
 private:
     HINSTANCE m_hInstance;
-    std::wstring m_className;
+    std::wstring m_className = L"My Window";
     std::wstring m_windowTitle;
     HWND m_hwnd;
 };

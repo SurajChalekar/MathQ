@@ -8,6 +8,7 @@
 #include <vector>
 #include <stdexcept>
 #include <cstring>
+#include <cmath>
 
 // Simple vertex structure
 struct Vertex {
@@ -72,7 +73,21 @@ Graph2D::~Graph2D()
 {
     // ComPtrs auto-release
 }
-
+void Graph2D::DrawGrid(int nx, int ny, float r, float g, float b)
+{
+    // Draw vertical lines
+    for (int i = 0; i <= nx; ++i) {
+        float x = -1.0f + 2.0f * i / nx;
+        // Draw a vertical line from (x, -1) to (x, 1)
+        DrawLineGraph({ {x, -1.0f}, {x, 1.0f} }, r, g, b);
+    }
+    // Draw horizontal lines
+    for (int j = 0; j <= ny; ++j) {
+        float y = -1.0f + 2.0f * j / ny;
+        // Draw a horizontal line from (-1, y) to (1, y)
+        DrawLineGraph({ {-1.0f, y}, {1.0f, y} }, r, g, b);
+    }
+}
 void Graph2D::DrawLineGraph(const std::vector<std::pair<float, float>>& points, float r, float g, float b)
 {
     if (points.size() < 2) return;

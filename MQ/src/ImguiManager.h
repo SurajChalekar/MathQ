@@ -13,7 +13,7 @@ public:
     ImGuiManager(HWND hwnd, Graphics& gfx);
     ~ImGuiManager();
 
-    void BeginFrame();
+    void BeginFrame(float& x,float& y);
     void EndFrame();
 
 };

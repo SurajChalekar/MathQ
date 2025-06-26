@@ -1,8 +1,8 @@
 #include "Window.h"
 #include "Imgui/imgui_impl_win32.h"
 
-Window::Window(HINSTANCE hInstance, const std::wstring& className, const std::wstring& windowTitle, int width, int height)
-    : m_hInstance(hInstance), m_className(className), m_windowTitle(windowTitle), m_hwnd(nullptr)
+Window::Window(HINSTANCE hInstance, const std::wstring& windowTitle, int width, int height)
+    : m_hInstance(hInstance), m_windowTitle(windowTitle), m_hwnd(nullptr)
 {
     RegisterWindowClass();
     CreateAppWindow(width, height);

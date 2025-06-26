@@ -8,7 +8,13 @@ class Graph2D {
 public:
     Graph2D(Graphics& gfx);
     ~Graph2D();
-
+    void DrawPoint(float x, float y, float r, float g, float b, float size = 0.02f)
+    {
+        float half = size * 0.5f;
+        // Draw a filled rectangle centered at (x, y)
+        DrawRectangle(x - half, y - half, x + half, y + half, r, g, b);
+    }
+    void DrawGrid(int nx, int ny, float r, float g, float b);
     // Draw a line graph. Points are in normalized device coordinates (-1..1)
     void DrawLineGraph(const std::vector<std::pair<float, float>>& points, float r, float g, float b);
 

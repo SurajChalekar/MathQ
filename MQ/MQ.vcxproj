@@ -178,6 +178,8 @@
     <ClInclude Include="src\Imgui\imstb_rectpack.h" />
     <ClInclude Include="src\Imgui\imstb_textedit.h" />
     <ClInclude Include="src\Imgui\imstb_truetype.h" />
+    <ClInclude Include="src\MandelbrotSet.h" />
+    <ClInclude Include="src\RandomWalker.h" />
     <ClInclude Include="src\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
